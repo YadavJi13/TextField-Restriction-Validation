@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TextFieldRestriction" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Input" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Umg-RU-c9a">
+                                <rect key="frame" x="30" y="75" width="315" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="pT4-w6-Hcy"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="JxJ-23-oka"/>
+                                </connections>
+                            </textField>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="3BA-Tl-di9">
+                                <rect key="frame" x="109.5" y="173" width="156" height="110"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oj-IY-z6S">
+                                        <rect key="frame" x="0.0" y="0.0" width="156" height="30"/>
+                                        <state key="normal" title="Alphabet Only"/>
+                                        <state key="selected">
+                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="clickOnAlphabetOnly:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6o1-qQ-bJM"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c79-AJ-gG8">
+                                        <rect key="frame" x="0.0" y="40" width="156" height="30"/>
+                                        <state key="normal" title="Alphanumeric Only"/>
+                                        <connections>
+                                            <action selector="clickOnAlphanumericOnly:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cf8-8i-jN7"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0yJ-3n-RA0">
+                                        <rect key="frame" x="0.0" y="80" width="156" height="30"/>
+                                        <state key="normal" title="Alphabet Whihtespace"/>
+                                        <connections>
+                                            <action selector="clickOnAlphabetWhiteSpace:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UPt-tN-iIP"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3BA-Tl-di9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6Ig-tw-StE"/>
+                            <constraint firstItem="Umg-RU-c9a" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="pT3-eF-6WU"/>
+                            <constraint firstItem="Umg-RU-c9a" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="qJx-dY-Pgh"/>
+                            <constraint firstItem="3BA-Tl-di9" firstAttribute="top" secondItem="Umg-RU-c9a" secondAttribute="bottom" constant="58" id="qyF-4S-iFJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Umg-RU-c9a" secondAttribute="trailing" constant="30" id="uQ4-Ek-NZb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="btnFirst" destination="7oj-IY-z6S" id="kAl-lj-ONN"/>
+                        <outlet property="btnSecond" destination="c79-AJ-gG8" id="Dsn-gb-3Dg"/>
+                        <outlet property="btnThird" destination="0yJ-3n-RA0" id="2cI-Al-10w"/>
+                        <outlet property="txtField" destination="Umg-RU-c9a" id="Ike-1y-xqe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5.5999999999999996" y="69.715142428785612"/>
+        </scene>
+    </scenes>
+</document>
